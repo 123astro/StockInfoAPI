@@ -20,13 +20,11 @@ public class StockController {
     private String alpha_Vantage_Endpoint = "https://www.alphavantage.co/query?function=OVERVIEW" +
             "&symbol=";
 
-
     @GetMapping("/{stock}")
-        public Object getStock(RestTemplate restTemplate, @PathVariable("stock") String stockTicker) {
-            String apikey = env.getProperty("ALPHA_KEY");
-            return restTemplate.getForObject(alpha_Vantage_Endpoint + stockTicker + "&interval=5min&outputsize" +
-                            "=full&apikey=" + apikey,
-                    Object.class);
-
+    public Object getStock(RestTemplate restTemplate, @PathVariable("stock") String stockTicker) {
+        String apikey = env.getProperty("ALPHA_KEY");
+        return restTemplate.getForObject(alpha_Vantage_Endpoint + stockTicker + "&interval=5min&outputsize" +
+                        "=full&apikey=" + apikey,
+                Object.class);
     }
 }
