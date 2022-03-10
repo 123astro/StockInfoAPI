@@ -17,7 +17,7 @@ public class StockController {
     @Autowired
     private Environment env;
 
-    private String alpha_Vantage_Endpoint = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY" +
+    private String alpha_Vantage_Endpoint = "https://www.alphavantage.co/query?function=OVERVIEW" +
             "&symbol=";
 
 
