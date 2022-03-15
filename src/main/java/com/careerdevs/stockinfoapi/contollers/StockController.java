@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/api/") // endpoint
+@RequestMapping("/api/stocks/") // endpoint
 
 public class StockController {
 
@@ -16,8 +16,6 @@ public class StockController {
 
     private String alpha_Vantage_Endpoint = "https://www.alphavantage.co/query?function=OVERVIEW" +
             "&symbol=";
-
-    //@GetMapping("stocks")
 
     @GetMapping("overview")
     public Object getStock(RestTemplate restTemplate,
